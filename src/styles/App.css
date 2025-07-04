@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-container {
+  @apply min-h-screen flex flex-col bg-gray-100;
+}
+
+.main-content {
+  @apply flex-grow;
+}
+
+.hero-section {
+  @apply relative h-[70vh] md:h-[80vh] flex items-center justify-center;
+}
+
+.hero-video {
+  @apply absolute top-0 left-0 w-full h-full object-cover z-0;
+}
+
+.hero-overlay {
+  @apply absolute top-0 left-0 w-full h-full bg-black opacity-40 z-10;
+}
+
+.hero-content {
+  @apply relative z-20 text-white;
+}
+
+.hero-content .highlight {
+  @apply text-blue-300;
+}
+
+.floating-chatbot {
+  @apply fixed bottom-6 right-6 z-50;
+}
+
+.chatbot-toggle {
+  @apply bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center;
+}
+
+.features-section {
+  @apply py-12 bg-gray-50;
+}
+
+.feature-card {
+  @apply p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300;
+}
+
+.feature-card h3 {
+  @apply text-xl font-medium mb-2;
+}
+
+.feature-card p {
+  @apply text-gray-600;
+}
+
+.visa-section {
+  @apply py-12 bg-gray-50;
+}
+
+.visa-info, .visa-form {
+  @apply p-6 bg-white rounded-lg shadow-md;
+}
+
+.visa-form input, .visa-form select {
+  @apply mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+@keyframes greeting {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.hero-greeting {
+  z-index: 10;
+}
+
+.animate-greeting {
+  animation: greeting 5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Optional: Style for user marker if different appearance is desired */
+.user-marker {
+  filter: hue-rotate(120deg); /* Greenish tint for user marker */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.selected-marker {
+  filter: hue-rotate(120deg); /* Greenish tint for selected/user marker */
+}

@@ -1,38 +1,256 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-container {
+  @apply min-h-screen flex flex-col bg-gray-100;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-content {
+  @apply flex-grow;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.hero-section {
+  @apply relative h-[70vh] sm:h-[80vh] md:h-[90vh] flex items-center justify-center;
+}
+
+.hero-video {
+  @apply absolute top-0 left-0 w-full h-full object-cover z-0;
+}
+
+.hero-overlay {
+  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 to-blue-900/30 z-10;
+}
+
+.hero-content {
+  @apply relative z-20 text-white;
+}
+
+.hero-content .highlight {
+  @apply text-blue-300;
+}
+
+.features-section {
+  @apply py-12 bg-gray-50;
+}
+
+.feature-card {
+  @apply p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300;
+}
+
+.feature-card h3 {
+  @apply text-xl font-medium mb-2;
+}
+
+.feature-card p {
+  @apply text-gray-600;
+}
+
+.visa-section {
+  @apply py-12 bg-gray-50;
+}
+
+.visa-info, .visa-form {
+  @apply p-6 bg-white rounded-lg shadow-md;
+}
+
+.visa-form input, .visa-form select {
+  @apply mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-container {
+  @apply min-h-screen flex flex-col bg-gray-100;
+}
+
+.main-content {
+  @apply flex-grow;
+}
+
+.hero-section {
+  @apply relative h-[70vh] sm:h-[80vh] md:h-[90vh] flex items-center justify-center;
+}
+
+.hero-video {
+  @apply absolute top-0 left-0 w-full h-full object-cover z-0;
+}
+
+.hero-overlay {
+  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 to-blue-900/30 z-10;
+}
+
+.hero-content {
+  @apply relative z-20 text-white;
+}
+
+.hero-content .highlight {
+  @apply text-blue-300;
+}
+
+.features-section {
+  @apply py-12 bg-gray-50;
+}
+
+.feature-card {
+  @apply p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300;
+}
+
+.feature-card h3 {
+  @apply text-xl font-medium mb-2;
+}
+
+.feature-card p {
+  @apply text-gray-600;
+}
+
+.visa-section {
+  @apply py-12 bg-gray-50;
+}
+
+.visa-info, .visa-form {
+  @apply p-6 bg-white rounded-lg shadow-md;
+}
+
+.visa-form input, .visa-form select {
+  @apply mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500;
+}
+
+.map-section {
+  @apply py-12 bg-gray-50;
+}
+
+.map-container {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.leaflet-map {
+  @apply h-[500px] w-full;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  @apply bg-white rounded-lg shadow-md;
+}
+
+.custom-popup .leaflet-popup-content {
+  @apply p-2;
+}
+
+.custom-popup .leaflet-popup-tip {
+  @apply bg-white;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-container {
+  @apply min-h-screen flex flex-col bg-gray-100;
 }
 
-.App-link {
-  color: #61dafb;
+.main-content {
+  @apply flex-grow;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.hero-section {
+  @apply relative h-[70vh] sm:h-[80vh] md:h-[90vh] flex items-center justify-center;
+}
+
+.hero-video {
+  @apply absolute top-0 left-0 w-full h-full object-cover z-0;
+}
+
+.hero-overlay {
+  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 to-blue-900/30 z-10;
+}
+
+.hero-content {
+  @apply relative z-20 text-white;
+}
+
+.hero-content .highlight {
+  @apply text-blue-300;
+}
+
+.features-section {
+  @apply py-12 bg-gray-50;
+}
+
+.feature-card {
+  @apply p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300;
+}
+
+.feature-card h3 {
+  @apply text-xl font-medium mb-2;
+}
+
+.feature-card p {
+  @apply text-gray-600;
+}
+
+.visa-section {
+  @apply py-12 bg-gray-50;
+}
+
+.visa-info, .visa-form {
+  @apply p-6 bg-white rounded-lg shadow-md;
+}
+
+.visa-form input, .visa-form select {
+  @apply mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500;
+}
+
+.map-section {
+  @apply py-12 bg-gray-50;
+}
+
+.map-container {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.leaflet-map {
+  @apply h-[500px] w-full;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  @apply bg-white rounded-lg shadow-md;
+}
+
+.custom-popup .leaflet-popup-content {
+  @apply p-2;
+}
+
+.custom-popup .leaflet-popup-tip {
+  @apply bg-white;
+}
+
+.hotels-section {
+  @apply py-12 bg-white;
+}
+
+.hotel-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300;
+}
+
+.hotel-card img {
+  @apply w-full h-48 object-cover;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
