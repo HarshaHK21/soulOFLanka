@@ -1,0 +1,26 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "7a0e92c3-6473-402b-8bb1-b70d148d7d3e",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1753456187275"
+        }
+      },
+      "favorite": {
+        "name": "souloflanka",
+        "color": "color1"
+      },
+      "savedConnectionType": "favorite",
+      "connectionOptions": {
+        "connectionString": "mongodb://localhost:27017/",
+        "oidc": {}
+      },
+      "connectionSecrets": "AAHSl4bJKcZMrixqceoCqAVqJZiy1GDkz+VOhjSmLEYTyMM/LPjW10IauNyxYBoh87KWfsXMhba+ys2x4sbtHBL04Qwmri4XFICVArjGXHQlHBWJjY3FFuf2qxkKIZ9jr6DKYpPtEprZVggDz0+FtyJoHF2vQOuox0RhaL/SH4vsmCjPxhNMcWKbqEg="
+    }
+  ]
+}

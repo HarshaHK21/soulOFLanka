@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from './context/AuthContext'; // Import AuthContext
 
 const Navbar: React.FC = () => {
+  const authContext = useContext(AuthContext);
+  const { user, logout } = authContext!; // Assert non-null as App.tsx ensures AuthProvider
+
   return (
     <nav className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-4 shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -25,12 +30,37 @@ const Navbar: React.FC = () => {
           <Link to="/visa" className="hover:text-yellow-300 transition-colors duration-200">
             Visa
           </Link>
-          <Link to="/login" className="hover:text-yellow-300 transition-colors duration-200">
-            Login
-          </Link>
-          <Link to="/signup" className="hover:text-yellow-300 transition-colors duration-200">
-            Signup
-          </Link>
+          {/* Conditional rendering for Login/Signup or Dashboard/Logout */}
+          {user ? (
+            <>
+              <Link to="/dashboard" className="hover:text-yellow-300 transition-colors duration-200">
+                Dashboard
+              </Link>
+              {user.role === 'vendor' && (
+                <Link to="/vendor-dashboard" className="hover:text-yellow-300 transition-colors duration-200">
+                  Vendor Dashboard
+                </Link>
+              )}
+               {/* Link to Admin Dashboard (only if user is an admin) */}
+              {user.role === 'admin' && (
+                <Link to="/admin" className="hover:text-yellow-300 transition-colors duration-200 font-bold text-red-300">
+                  Admin Panel
+                </Link>
+              )}
+              <button onClick={logout} className="hover:text-yellow-300 transition-colors duration-200 bg-transparent border-none text-white cursor-pointer">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/auth" className="hover:text-yellow-300 transition-colors duration-200">
+                Login
+              </Link>
+              <Link to="/auth" className="hover:text-yellow-300 transition-colors duration-200">
+                Signup
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
@@ -38,3 +68,5 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
+
