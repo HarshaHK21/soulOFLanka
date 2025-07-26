@@ -21,7 +21,7 @@ const mongoURI = process.env.MONGO_URI;
 
 // Connect to MongoDB
 mongoose.connect(mongoURI)
-.then(() => console.log('Local MongoDB connected successfully!'))
+.then(() => console.log('MongoDB Atlas connected successfully!'))
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Define Auth Routes
