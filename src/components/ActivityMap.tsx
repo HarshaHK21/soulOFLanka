@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import LocationDetails from './LocationDetails'; 
 
 // Fix Leaflet default marker icon issue
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -37,27 +38,29 @@ interface Location {
 }
 
 const locations: Location[] = [
-  { id: 1, name: 'Sigiriya', position: [7.957, 80.760], description: 'Ancient rock fortress', imageUrl: 'https://source.unsplash.com/400x300/?sigiriya' },
-  { id: 2, name: 'Kandy', position: [7.2906, 80.6337], description: 'Temple of the Tooth', imageUrl: 'https://source.unsplash.com/400x300/?kandy' },
-  { id: 3, name: 'Galle', position: [6.0535, 80.221], description: 'Historic fort', imageUrl: 'https://source.unsplash.com/400x300/?galle' },
-  { id: 4, name: 'Ella', position: [6.8667, 81.0466], description: 'Scenic hill country', imageUrl: 'https://source.unsplash.com/400x300/?ella' },
-  { id: 5, name: 'Yala National Park', position: [6.3754, 81.5105], description: 'Wildlife safari', imageUrl: 'https://source.unsplash.com/400x300/?yala' },
-  { id: 6, name: 'Mirissa', position: [5.9485, 80.4718], description: 'Whale watching beach', imageUrl: 'https://source.unsplash.com/400x300/?mirissa' },
-  { id: 7, name: 'Anuradhapura', position: [8.3114, 80.4037], description: 'Ancient city', imageUrl: 'https://source.unsplash.com/400x300/?anuradhapura' },
-  { id: 8, name: 'Polonnaruwa', position: [7.9403, 81.0188], description: 'Medieval ruins', imageUrl: 'https://source.unsplash.com/400x300/?polonnaruwa' },
-  { id: 9, name: 'Nuwara Eliya', position: [6.9497, 80.7891], description: 'Tea plantations', imageUrl: 'https://source.unsplash.com/400x300/?nuwara+eliya' },
-  { id: 10, name: 'Unawatuna', position: [6.0097, 80.2484], description: 'Tropical beach', imageUrl: 'https://source.unsplash.com/400x300/?unawatuna' },
-  // Additional 90 destinations (abridged for brevity; full list available on request)
-  { id: 11, name: 'Dambulla', position: [7.8742, 80.6511], description: 'Golden Temple caves', imageUrl: 'https://source.unsplash.com/400x300/?dambulla' },
-  { id: 12, name: 'Arugam Bay', position: [6.8404, 81.836], description: 'Surfing hotspot', imageUrl: 'https://source.unsplash.com/400x300/?arugam+bay' },
-  { id: 13, name: 'Trincomalee', position: [8.5874, 81.2152], description: 'Pristine beaches', imageUrl: 'https://source.unsplash.com/400x300/?trincomalee' },
-  { id: 14, name: 'Horton Plains', position: [6.8021, 80.8072], description: 'World’s End viewpoint', imageUrl: 'https://source.unsplash.com/400x300/?horton+plains' },
-  { id: 15, name: 'Adam’s Peak', position: [6.8096, 80.4994], description: 'Sacred pilgrimage site', imageUrl: 'https://source.unsplash.com/400x300/?adams+peak' },
-  // ... (85 more destinations omitted for brevity; full list includes diverse locations like Bentota, Jaffna, etc.)
-  { id: 100, name: 'Hikkaduwa', position: [6.1407, 80.0992], description: 'Coral reefs and nightlife', imageUrl: 'https://source.unsplash.com/400x300/?hikkaduwa' },
+  { id: 1, name: 'Sigiriya', position: [7.957, 80.76], description: 'Ancient rock fortress', imageUrl: 'https://th.bing.com/th/id/R.dade39779e7549015f83af8f8782e6e8?rik=IHFleItx%2by2chw&riu=http%3a%2f%2fwww.pearlceylon.com%2fimages%2fdestination%2fsigiriya%2fsigiriya-by-air.jpg&ehk=qBvBwGXJvH%2fks4lehtxalJjDvmSDg8BAUkxTRWpI%2bWo%3d&risl=&pid=ImgRaw&r=0' },
+  { id: 2, name: 'Kandy', position: [7.2906, 80.6337], description: 'Temple of the Tooth', imageUrl: 'https://tse3.mm.bing.net/th/id/OIP.PKScifEaFHhGCmxtbWS0LwHaEh?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 3, name: 'Galle', position: [6.0535, 80.221], description: 'Historic fort', imageUrl: 'https://img.freepik.com/premium-photo/historic-gall-fort-lighthouse-sri-lanka_114775-301.jpg' },
+  { id: 4, name: 'Ella', position: [6.8667, 81.0466], description: 'Scenic hill country', imageUrl: 'https://th.bing.com/th/id/R.2739a468157fcd0437e7e51ff5b82536?rik=FAWsga0o4sEtmg&pid=ImgRaw&r=0' },
+  { id: 5, name: 'Yala National Park', position: [6.3754, 81.5105], description: 'Wildlife safari', imageUrl: 'https://tse4.mm.bing.net/th/id/OIF.bxLoS6ZFPT7bKjRHpE5yKA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 6, name: 'Mirissa', position: [5.9485, 80.4718], description: 'Whale watching beach', imageUrl: 'https://tse1.mm.bing.net/th/id/OIP.0AazyGzjGTTkZKnyK9uYDwHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 7, name: 'Anuradhapura', position: [8.3114, 80.4037], description: 'Ancient city', imageUrl: 'https://th.bing.com/th?id=OIF.iJxEdz%2b2%2fkuZKWh%2f4s0TVQ&r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 8, name: 'Polonnaruwa', position: [7.9403, 81.0188], description: 'Medieval ruins', imageUrl: 'https://tse4.mm.bing.net/th/id/OIP.j-huh8-6odxo4CTx_z-KIAHaC6?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 9, name: 'Nuwara Eliya', position: [6.9497, 80.7891], description: 'Tea plantations', imageUrl: 'https://tse3.mm.bing.net/th/id/OIP.m5mB5RBSwlOSX4wpza8tVwHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 10, name: 'Unawatuna', position: [6.0097, 80.2484], description: 'Tropical beach', imageUrl: 'https://tse1.mm.bing.net/th/id/OIP.GHwNml05pvLpUu_kF_VAXQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 11, name: 'Arugam Bay', position: [6.839, 81.83], description: 'Famous surf beach', imageUrl: 'https://tse1.mm.bing.net/th/id/OIP.A61eTdWylV98nIm7kML9rAHaDF?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 12, name: 'Trincomalee', position: [8.5711, 81.2335], description: 'Beautiful beaches and Koneswaram Temple', imageUrl: 'https://tse1.mm.bing.net/th/id/OIP.ekmOwl33Wy-PJyUoFfcsegHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 13, name: 'Bentota', position: [6.4214, 80.0048], description: 'Luxury beach resort town', imageUrl: 'https://th.bing.com/th/id/R.fb5b4273556f6dec851c97333228cfb0?rik=kt0nqu3QBNNT%2fQ&pid=ImgRaw&r=0' },
+  { id: 14, name: 'Jaffna', position: [9.6685, 80.0074], description: 'Cultural capital of the north', imageUrl: 'https://tse4.mm.bing.net/th/id/OIP.MHIr1qBBMbcd56PBYp2HgAHaEU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 15, name: 'Horton Plains', position: [6.8021, 80.7998], description: 'National park with World’s End cliff', imageUrl: 'https://tse1.mm.bing.net/th/id/OIP.To7QP_xgdIrRfkllS_MxhgHaEc?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 16, name: 'Adam’s Peak (Sri Pada)', position: [6.8096, 80.4994], description: 'Sacred pilgrimage mountain', imageUrl: 'https://tse4.mm.bing.net/th/id/OIP.NBsH5hLmfkQ0vpYKTA39VQHaDc?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 17, name: 'Udawalawe National Park', position: [6.4753, 80.8881], description: 'Elephant safari destination', imageUrl: 'https://tse4.mm.bing.net/th/id/OIP.-K9IT6Zz7iMxLcefT9stjAHaE5?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 18, name: 'Kalpitiya', position: [8.232, 79.759], description: 'Kite surfing and dolphin watching', imageUrl: 'https://th.bing.com/th/id/R.32ff9220281fefdb142961198980ec0e?rik=bRYh5RbQQ7siDQ&pid=ImgRaw&r=0' },
+  { id: 19, name: 'Dambulla Cave Temple', position: [7.856, 80.649], description: 'UNESCO cave temple complex', imageUrl: 'https://tse2.mm.bing.net/th/id/OIP.dyzrizJgepaW0fpd6n_dvQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3' },
+  { id: 20, name: 'Colombo', position: [6.9271, 79.8612], description: 'Commercial capital city', imageUrl: 'https://www.andbeyond.com/wp-content/uploads/sites/5/colombo-sri-lanka.jpg' }
+  
 ];
 
-// Component to update map center
 const MapUpdater: React.FC<{ center: [number, number]; zoom?: number }> = ({ center, zoom = 10 }) => {
   const map = useMap();
   useEffect(() => {
@@ -72,8 +75,9 @@ const ActivityMap: React.FC = () => {
   const [mapCenter, setMapCenter] = useState<[number, number]>([7.8731, 80.7718]);
   const [error, setError] = useState<string | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState<string>('');
+  
+  // The state to control the new LocationDetails component
+  const [showLocationDetails, setShowLocationDetails] = useState(false);
 
   const filteredLocations = locations.filter((loc) =>
     loc.name.toLowerCase().includes(search.toLowerCase())
@@ -114,20 +118,20 @@ const ActivityMap: React.FC = () => {
     }
   };
 
-  const openImageModal = (imageUrl: string) => {
-    setModalImage(imageUrl);
-    setIsModalOpen(true);
+  const openLocationDetails = (loc: Location) => {
+    setSelectedLocation(loc);
+    setShowLocationDetails(true);
   };
 
-  const closeImageModal = () => {
-    setIsModalOpen(false);
-    setModalImage('');
+  const closeLocationDetails = () => {
+    setShowLocationDetails(false);
+    setSelectedLocation(null);
   };
 
   return (
     <section className="map-section py-16 bg-gradient-to-b from-gray-50 to-white min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center tracking-tight animate-[fadeIn_1s_ease-in-out]">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center tracking-tight">
           Explore 100 Sri Lankan Destinations
         </h2>
         <div className="flex flex-col sm:flex-row justify-center items-center mb-8 gap-4 max-w-2xl mx-auto">
@@ -143,45 +147,17 @@ const ActivityMap: React.FC = () => {
             onClick={handleSearch}
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md"
           >
-            <svg
-              className="w-5 h-5 inline-block mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
             Search
           </button>
           <button
             onClick={handleGeolocation}
             className="w-full sm:w-auto bg-gray-200 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-all duration-300 shadow-md"
           >
-            <svg
-              className="w-5 h-5 inline-block mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-            </svg>
             My Location
           </button>
         </div>
         {error && (
-          <p className="text-center text-red-500 mb-4 animate-[fadeIn_0.5s_ease-in-out]">{error}</p>
+          <p className="text-center text-red-500 mb-4">{error}</p>
         )}
         <div className="map-container bg-white rounded-xl shadow-lg overflow-hidden">
           <MapContainer
@@ -192,7 +168,7 @@ const ActivityMap: React.FC = () => {
           >
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             />
             {filteredLocations.map((loc) => (
               <Marker
@@ -200,12 +176,12 @@ const ActivityMap: React.FC = () => {
                 position={loc.position}
                 icon={loc === selectedLocation ? SelectedIcon : DefaultIcon}
               >
-                <Popup className="custom-popup">
+                <Popup>
                   <div className="p-3">
                     <h3 className="font-semibold text-gray-900">{loc.name}</h3>
                     <p className="text-gray-600 text-sm mb-2">{loc.description}</p>
                     <button
-                      onClick={() => openImageModal(loc.imageUrl)}
+                      onClick={() => openLocationDetails(loc)}
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
                       View Location
@@ -216,7 +192,7 @@ const ActivityMap: React.FC = () => {
             ))}
             {userLocation && !selectedLocation && (
               <Marker position={userLocation} icon={SelectedIcon}>
-                <Popup className="custom-popup">
+                <Popup>
                   <div className="p-3">
                     <h3 className="font-semibold text-gray-900">Your Location</h3>
                     <p className="text-gray-600 text-sm">You are here!</p>
@@ -228,41 +204,8 @@ const ActivityMap: React.FC = () => {
           </MapContainer>
         </div>
       </div>
-      {/* Image Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-[fadeIn_0.3s_ease-in-out]">
-          <div className="bg-white rounded-xl p-4 max-w-2xl w-full mx-4">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-semibold text-gray-900">Destination Image</h3>
-              <button
-                onClick={closeImageModal}
-                className="text-gray-600 hover:text-gray-800"
-                aria-label="Close modal"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <img
-              src={modalImage}
-              alt="Destination"
-              className="w-full h-auto rounded-lg"
-              onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found')}
-            />
-          </div>
-        </div>
+      {showLocationDetails && selectedLocation && (
+        <LocationDetails location={selectedLocation} onClose={closeLocationDetails} />
       )}
     </section>
   );

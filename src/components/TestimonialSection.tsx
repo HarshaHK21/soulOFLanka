@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+// The interface remains the same
 interface Testimonial {
   id: number;
   name: string;
@@ -8,52 +10,81 @@ interface Testimonial {
   avatar?: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: 'Emma Thompson',
-    quote: 'Exploring Sri Lanka with this platform was a breeze! The Activity Map helped us discover Sigiriya, and the booking process was seamless.',
-    rating: 5,
-    avatar: 'https://source.unsplash.com/100x100/?portrait,traveler',
-  },
-  {
-    id: 2,
-    name: 'Ravi Patel',
-    quote: 'The ChatBot was a lifesaver, suggesting a perfect itinerary for Kandy and Ella. Highly recommend for first-time visitors!',
-    rating: 4,
-    avatar: 'https://source.unsplash.com/100x100/?portrait,man',
-  },
-  {
-    id: 3,
-    name: 'Sophie Nguyen',
-    quote: 'Booking our stay at Cinnamon Grand Colombo was so easy, and the Blog Section inspired our Galle Fort visit. Amazing experience!',
-    rating: 5,
-    avatar: 'https://source.unsplash.com/100x100/?portrait,woman',
-  },
-  {
-    id: 4,
-    name: 'Liam Brown',
-    quote: 'The Activity Map made it simple to plan our Yala safari. The interface is user-friendly, and the visuals are stunning!',
-    rating: 4,
-    avatar: 'https://source.unsplash.com/100x100/?portrait,adventure',
-  },
-  {
-    id: 5,
-    name: 'Anika Sharma',
-    quote: 'Loved the cultural tips from the ChatBot for Anuradhapura. The platform made our trip unforgettable!',
-    rating: 5,
-    avatar: 'https://source.unsplash.com/100x100/?portrait,indian',
-  },
-  {
-    id: 6,
-    name: 'Carlos Mendes',
-    quote: 'From Mirissa’s beaches to Nuwara Eliya’s tea estates, this app guided us perfectly. The testimonials section is a great touch!',
-    rating: 5,
-    avatar: 'https://source.unsplash.com/100x100/?portrait,traveler',
-  },
-];
-
 const TestimonialSection: React.FC = () => {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // This function fetches the data from your backend
+    const fetchTestimonials = async () => {
+      try {
+        // We'll simulate a call to an API endpoint.
+        // Replace '/api/testimonials' with your actual backend endpoint later.
+        // const response = await axios.get('/api/testimonials');
+        // setTestimonials(response.data);
+
+        // For now, let's simulate the API response with a delay
+        setTimeout(() => {
+          const mockData: Testimonial[] = [
+            {
+              id: 1,
+              name: 'Emma Thompson',
+              quote: 'Exploring Sri Lanka with this platform was a breeze! The Activity Map helped us discover Sigiriya, and the booking process was seamless.',
+              rating: 5,
+              avatar: '/assets/avatar-1.jpg', // Using local assets now
+            },
+            {
+              id: 2,
+              name: 'Ravi Patel',
+              quote: 'The ChatBot was a lifesaver, suggesting a perfect itinerary for Kandy and Ella. Highly recommend for first-time visitors!',
+              rating: 4,
+              avatar: '/assets/avatar-1.jpg',
+            },
+            {
+              id: 3,
+              name: 'Sophie Nguyen',
+              quote: 'Booking our stay at Cinnamon Grand Colombo was so easy, and the Blog Section inspired our Galle Fort visit. Amazing experience!',
+              rating: 5,
+              avatar: '/assets/avatar-1.jpg',
+            },
+            {
+              id: 4,
+              name: 'Liam Brown',
+              quote: 'The Activity Map made it simple to plan our Yala safari. The interface is user-friendly, and the visuals are stunning!',
+              rating: 4,
+              avatar: '/assets/avatar-1.jpg',
+            },
+          ];
+          setTestimonials(mockData);
+          setLoading(false);
+        }, 1000); // 1-second delay to simulate network request
+      } catch (err) {
+        setError('Failed to load testimonials. Please try again later.');
+        setLoading(false);
+        console.error(err);
+      }
+    };
+
+    fetchTestimonials();
+  }, []); // The empty array [] ensures this runs only once when the component mounts
+
+  if (loading) {
+    return (
+      <section className="testimonial-section py-16 bg-gradient-to-b from-white to-gray-50 text-center">
+        <p className="text-gray-600">Loading testimonials...</p>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="testimonial-section py-16 bg-gradient-to-b from-white to-gray-50 text-center">
+        <p className="text-red-500">{error}</p>
+      </section>
+    );
+  }
+
   return (
     <section className="testimonial-section py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +95,8 @@ const TestimonialSection: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="testimonial-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-[fadeIn_1s_ease-in-out] delay-[${index * 200}ms]"
+              className="testimonial-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-[fadeIn_1s_ease-in-out]"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="p-6">
                 <div className="flex items-center mb-4">
@@ -73,7 +105,7 @@ const TestimonialSection: React.FC = () => {
                       src={testimonial.avatar}
                       alt={`${testimonial.name}'s avatar`}
                       className="w-12 h-12 rounded-full object-cover mr-4"
-                      onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/100x100?text=Avatar')}
+                      onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/100x100?text=User')}
                     />
                   )}
                   <div>

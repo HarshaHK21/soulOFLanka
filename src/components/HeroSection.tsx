@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import ActivityMap from './ActivityMap';
+import HotelSection from './HotelSection';  
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
@@ -81,14 +83,14 @@ const HeroSection: React.FC = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
           <Link
-            to="/explore"
+            to="/ActivityMap"
             className="inline-block bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-10 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 animate-[pulse_2s_ease-in-out_infinite] shadow-lg"
             onClick={() => window.gtag?.('event', 'click', { event_category: 'CTA', event_label: 'Explore Sri Lanka' })}
           >
             Explore Sri Lanka →
           </Link>
           <Link
-            to="/booking"
+            to="/HotelSection"
             className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 shadow-md"
             onClick={() => window.gtag?.('event', 'click', { event_category: 'CTA', event_label: 'Start Your Journey' })}
           >

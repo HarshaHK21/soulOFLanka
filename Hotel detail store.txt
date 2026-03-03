@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Cinnamon Grand Colombo",
+    "location": "Colombo",
+    "description": "Luxury hotel in the heart of Colombo with stunning city views.",
+    "pricePerNight": 150,
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/9d/51/dd/cinnamon-grand-main-entrance.jpg?w=900&h=-1&s=1",
+    "rating": 5
+  },
+  {
+    "name": "Jetwing Lighthouse Galle",
+    "location": "Galle",
+    "description": "Coastal retreat with elegant rooms near the historic Galle Fort.",
+    "pricePerNight": 120,
+    "image": "https://th.bing.com/th/id/R.1b62b2910e5a4c655bfca825aff09ffc?rik=5VHaf8szr7%2bkcw&pid=ImgRaw&r=0",
+    "rating": 5
+  },
+  {
+    "name": "Heritance Kandalama",
+    "location": "Dambulla",
+    "description": "Eco-friendly resort nestled in the cultural triangle of Dambulla.",
+    "pricePerNight": 180,
+    "image": "https://th.bing.com/th/id/R.35f678dcd6b97d09555381abb5b71167?rik=Qe2RiOjnjofKJg&pid=ImgRaw&r=0",
+    "rating": 5
+  },
+  {
+    "name": "Shangri-La Colombo",
+    "location": "Colombo",
+    "description": "A sophisticated urban sanctuary offering breathtaking ocean views.",
+    "pricePerNight": 220,
+    "image": "https://www.travelplusstyle.com/wp-content/gallery/shangri-la-hotel-colombo/1c-swimming-pool-side-angle.jpg",
+    "rating": 5
+  },
+  {
+    "name": "The Fortress Resort & Spa",
+    "location": "Koggala",
+    "description": "An award-winning boutique resort offering a fusion of Dutch and Portuguese influences.",
+    "pricePerNight": 250,
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/2e/86/aa/the-exclusive-luxury.jpg?w=700&h=-1&s=1",
+    "rating": 5
+  },
+  {
+    "name": "Anantara Peace Haven Tangalle",
+    "location": "Tangalle",
+    "description": "A tropical sanctuary overlooking a secluded stretch of Sri Lanka's southern coastline.",
+    "pricePerNight": 300,
+    "image": "https://makotrav.com/wp-content/uploads/2020/06/khao-lak-webcam-768x513.jpg",
+    "rating": 5
+  },
+  {
+    "name": "Uga Ulagalla",
+    "location": "Anuradhapura",
+    "description": "A luxury boutique hotel set on a 58-acre estate, rich with history and nature.",
+    "pricePerNight": 350,
+    "image": "https://tse4.mm.bing.net/th/id/OIP.fuLqQ0naL3RnA5og22D5hwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 5
+  },
+  {
+    "name": "Wild Coast Tented Lodge",
+    "location": "Yala",
+    "description": "A spectacular luxury camp located on the border of Yala National Park.",
+    "pricePerNight": 400,
+    "image": "https://www.travelplusstyle.com/wp-content/gallery/06-wild-coast-tented-lodge/wild-coast-29.jpg",
+    "rating": 5
+  },
+  {
+    "name": "The Grand Hotel Nuwara Eliya",
+    "location": "Nuwara Eliya",
+    "description": "A magnificent colonial-era building with exquisite Victorian charm in the heart of 'Little England'.",
+    "pricePerNight": 90,
+    "image": "https://th.bing.com/th/id/OIP.8ir5Sq6PpXK7OhZBF_k94QHaE8?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "Cinnamon Citadel Kandy",
+    "location": "Kandy",
+    "description": "A tranquil haven on the banks of the Mahaweli River, offering scenic views and peaceful relaxation.",
+    "pricePerNight": 110,
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/0b/93/8f/panorama-restaurant-terrace.jpg?w=900&h=-1&s=1",
+    "rating": 4
+  },
+  {
+    "name": "Jetwing Vil Uyana",
+    "location": "Sigiriya",
+    "description": "A unique eco-friendly hotel created within a reclaimed marsh and paddy field.",
+    "pricePerNight": 280,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/84999991.jpg?k=6893eab300a3c49913cd41b10b617f4f0c88604cdf1f918c5bf3ebf40653e90b&o=&hp=1",
+    "rating": 5
+  },
+  {
+    "name": "Mandara Resort Mirissa",
+    "location": "Mirissa",
+    "description": "A serene oceanfront resort with an infinity pool and direct beach access.",
+    "pricePerNight": 130,
+    "image": "https://th.bing.com/th/id/OIP.a78ef9g2GyltRvQ2O8U7bgHaED?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "Amaya Lake Dambulla",
+    "location": "Dambulla",
+    "description": "A peaceful retreat with charming chalets set among lush greenery by a tranquil lake.",
+    "pricePerNight": 100,
+    "image": "https://tse1.mm.bing.net/th/id/OIP.AsK-1H7jwg-U7SVmOTbfGwHaDS?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "EKHO Lake House Polonnaruwa",
+    "location": "Polonnaruwa",
+    "description": "An iconic colonial-style hotel offering stunning views of Parakrama Samudraya.",
+    "pricePerNight": 85,
+    "image": "https://tse3.mm.bing.net/th/id/OIP.wR50ulB8sR8sbMkxXck7XwHaEY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "Santani Wellness Resort & Spa",
+    "location": "Kandy",
+    "description": "A secluded luxury wellness retreat focused on holistic well-being and natural beauty.",
+    "pricePerNight": 450,
+    "image": "https://tse1.mm.bing.net/th/id/OIP.jIxUruliOhqgIfLaEIwEgwHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 5
+  },
+  {
+    "name": "Cape Weligama",
+    "location": "Weligama",
+    "description": "A stunning cliff-top resort offering panoramic ocean views and private villas.",
+    "pricePerNight": 500,
+    "image": "https://tse2.mm.bing.net/th/id/OIP.xVWqntYeTjdg5Ec_DK9mwQHaEw?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 5
+  },
+  {
+    "name": "The Blue Water Wadduwa",
+    "location": "Wadduwa",
+    "description": "A Geoffrey Bawa-designed resort with a beautiful beach and spacious gardens.",
+    "pricePerNight": 95,
+    "image": "https://tse4.mm.bing.net/th/id/OIP.tobU3zMqNEhUMPTrh2DYtgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "Earl's Regency Kandy",
+    "location": "Kandy",
+    "description": "A grand hotel with classic elegance, nestled in a hillside overlooking the Mahaweli River.",
+    "pricePerNight": 125,
+    "image": "https://tse3.mm.bing.net/th/id/OIP.-OgJyrVvbe1E0C4u5APVRAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "Jetwing St. Andrew's",
+    "location": "Nuwara Eliya",
+    "description": "A colonial-era bungalow transformed into a charming hotel with an old-world feel.",
+    "pricePerNight": 80,
+    "image": "https://tse2.mm.bing.net/th/id/OIP.D7wlLHwN3llbc2YkimGYnQHaD4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "Cinnamon Wild Yala",
+    "location": "Yala",
+    "description": "An eco-friendly hotel at the edge of Yala National Park, perfect for safari adventures.",
+    "pricePerNight": 170,
+    "image": "https://tse4.mm.bing.net/th/id/OIP.IccDG1JcF-8pEoLrnK6dDQHaE0?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  },
+  {
+    "name": "The Kingsbury Colombo",
+    "location": "Colombo",
+    "description": "An elegant hotel offering panoramic views of the Indian Ocean and a grand atmosphere.",
+    "pricePerNight": 200,
+    "image": "https://media-cdn.tripadvisor.com/media/photo-s/28/91/34/0b/the-kingsbury-exterior.jpg",
+    "rating": 5
+  },
+  {
+    "name": "Araliya Red Nuwara Eliya",
+    "location": "Nuwara Eliya",
+    "description": "A modern and vibrant hotel with a unique style, offering a fresh take on hospitality.",
+    "pricePerNight": 105,
+    "image": "https://pix10.agoda.net/hotelImages/15854008/-1/9c117d96dbfdbeb2554ef872e348971a.jpg?ca=20&ce=0&s=1024x768",
+    "rating": 4
+  },
+  {
+    "name": "Karpaha Sands",
+    "location": "Kalkudah",
+    "description": "A luxurious and secluded eco-friendly hotel on the beautiful beach of Kalkudah.",
+    "pricePerNight": 280,
+    "image": "https://tse3.mm.bing.net/th/id/OIP.2ylXsJFdP4mhZpEoFW-vtAHaE6?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 5
+  },
+  {
+    "name": "The Residence by Uga Escapes",
+    "location": "Colombo",
+    "description": "A luxurious boutique hotel offering old-world charm in a restored 19th-century townhouse.",
+    "pricePerNight": 230,
+    "image": "https://tse1.mm.bing.net/th/id/OIP.GO5Gf4SmmTdHH0HOBLbXyAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 5
+  },
+  {
+    "name": "Garton's Cape Bentota",
+    "location": "Bentota",
+    "description": "A modern hotel with stunning views of the Bentota river and the Indian Ocean.",
+    "pricePerNight": 140,
+    "image": "https://tse4.mm.bing.net/th/id/OIP.f0LJ468BLTWgSoZkvjKhxQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "rating": 4
+  }
+]
