@@ -74,7 +74,35 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h2 align="center">Project Screenshots</h2>
 
+<p align="center">
+<img src="https://github.com/user-attachments/assets/bb83b0b8-0cd7-499a-84f5-56925f939a52" width="800"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/e1e22160-697c-448d-92eb-d19dd3abd63d" width="800"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/fb66be47-7357-4059-bba0-85f9188463de" width="800"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/9315a08c-c45e-487a-9670-dcebca5ccb08" width="800"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/cee0306a-cc1f-40f7-9f6a-0ac70fee9d8f" width="800"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/1ac09f3e-94ff-406f-bbd8-880d85585c1b" width="800"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/9867415c-81e1-40c2-b519-469ea808c947" width="800"/>
+</p>
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
